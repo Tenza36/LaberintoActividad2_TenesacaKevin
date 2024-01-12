@@ -9,6 +9,7 @@ public class BulletSpawn : MonoBehaviour
     [SerializeField] private bool isShooting = false;
     [SerializeField] private bool start = false;
     [SerializeField] private float bulletSpeed;
+    public float intervaloBala=3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class BulletSpawn : MonoBehaviour
             GameObject x = Instantiate(bullet, spawn.position, Quaternion.identity) as GameObject;
             Rigidbody rb = x.GetComponent<Rigidbody>();
             rb.AddForce(Vector3.back * bulletSpeed, ForceMode.Impulse);
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(intervaloBala);
         }
     }
 }
