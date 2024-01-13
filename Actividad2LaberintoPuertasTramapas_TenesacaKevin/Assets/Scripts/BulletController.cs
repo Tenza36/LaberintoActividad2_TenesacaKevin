@@ -12,8 +12,8 @@ public class BulletController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Impacto");
         Destroy(this.gameObject);
+        Debug.Log(collision.gameObject.tag);
     }
     // Update is called once per frame
     void Update()
