@@ -16,6 +16,8 @@ public class AbrirPuertas : MonoBehaviour
         if (renderer != null)
         {
             renderer.material = open;
+            StartCoroutine(Shoot());
+            
         }
     }
 
@@ -25,6 +27,7 @@ public class AbrirPuertas : MonoBehaviour
         if (renderer != null)
         {
             closed = renderer.material;
+
         }
         else
         {
