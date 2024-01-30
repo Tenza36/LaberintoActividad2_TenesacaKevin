@@ -13,9 +13,18 @@ public class MoverPersonaje : MonoBehaviour
     public Transform EnElPiso;
     public float DistanciaDelPiso;
     public LayerMask MascaraDelPiso;
+    private Animator anim;
 
     Vector3 VelocidadAbajo;
     bool EstaEnElPiso;
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        if (anim == null)
+        {
+            Debug.LogError("Animator component not found on " + gameObject.name);
+        }
+    }
 
     void Update()
     {
@@ -41,5 +50,8 @@ public class MoverPersonaje : MonoBehaviour
 
         // Mover hacia abajo (gravedad)
         Controlador.Move(VelocidadAbajo * Time.deltaTime);
+
+        anim.SetFloat("Velx", x);
+        anim.SetFloat("Vely", z); 
     }
 }
