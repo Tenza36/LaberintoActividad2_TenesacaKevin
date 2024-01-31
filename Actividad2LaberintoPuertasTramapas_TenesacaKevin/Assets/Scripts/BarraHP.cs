@@ -8,6 +8,7 @@ public class BarraHP : MonoBehaviour
     public Image barraHP;
     public float vidaActual;
     public float vidaMaxima;
+    public int Muertes;
 
     void Update()
     {
